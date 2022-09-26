@@ -1,0 +1,54 @@
+﻿@*@model Datos.Datos.Disco*@
+@model Principal.ViewModels.DiscoTemaViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+<!-- Header Start -->
+<div class="jumbotron jumbotron-fluid mb-5">
+    <div class="container text-center py-5">
+        <h1 class="text-white display-3">Temas</h1>
+        <div class="d-inline-flex align-items-center text-white">
+            <p class="m-0"><a class="text-white" href="">Inicio</a></p>
+            <i class="fa fa-circle px-3"></i>
+            <p class="m-0">Temas</p>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
+@foreach (var item in Model.Tema)
+{
+    <!-- Tema -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 pb-4 pb-lg-0">
+                    <h6 class="text-primary text-uppercase font-weight-bold artista">@Html.DisplayFor(modelItem => item.Disco.Discografica.nombre)</h6>
+                    <img class="img-fluid w-100" src="@Html.DisplayFor(modelItem => item.Disco.imagen)" alt="">
+    
+                </div>
+                <div class="col-lg-7">
+                    <span>@Html.DisplayFor(modelItem => item.Disco.Categoria.nombre)</span>
+                    <h6 class="text-primary text-uppercase font-weight-bold artista">@Html.DisplayFor(modelItem => item.Disco.Autor.nombre)</h6>
+
+                    <h1 class="mb-4">@Html.DisplayFor(modelItem => item.Disco.nombre)</h1>
+
+                    <div class="d-flex align-items-center pt-2 ">
+                        <a href="@Html.DisplayFor(modelItem => item.link)" target="_blank" rel="noopener noreferrer">
+                            <button type="button" class="btn-play">
+                                <span></span>
+                            </button>
+                        </a>
+                        <h6 class="font-weight-bold m-0 ml-4">@Html.DisplayFor(modelItem => item.nombre)</h6>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+}
+<!--Tema final -->
